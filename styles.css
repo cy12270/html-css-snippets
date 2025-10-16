@@ -63,7 +63,12 @@ html {
     list-style: none;
     padding-left: 0;
     padding-top: 100px;
-    margin: 0;
+}
+
+.menu-category-list ul li {
+    margin-bottom: 20px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .menu-card-container {
