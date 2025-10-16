@@ -1,0 +1,20 @@
+* {
+    /* margin: 0; */
+    /* padding: 0; */
+}
+html {
+    align-items: center;
+}
+
+.menu-card-container {
+    width: 950px;
+    height: 770px;
+    /* flex-shrink: 0; */
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f8f8; */
+    border: 1px solid #333;
+}
