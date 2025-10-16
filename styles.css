@@ -6,6 +6,9 @@ html {
     align-items: center;
 }
 
+.menu-title {
+    padding-left: 175px;
+}
 .menu-container {
     margin: 0;
     padding: 0;
@@ -46,7 +49,7 @@ html {
 
 .menu-category-title {
     width: 1008px;
-    height: 70px;
+    height: 35px;
     text-align: left;
     margin-left: 25px;
     margin-top: 20px;
