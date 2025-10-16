@@ -5,7 +5,8 @@
     --primary-color: #007bff;
     --secondary-color: #6c757d;
     --background-color: #ffffff;
-    --text-color: #333333;
+    --primary-text-color: #000000;
+    --secondary-text-color: #333333;
     
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -31,12 +32,14 @@
 
 html {
     font-family: var(--font-primary);
+    color: var(--primary-text-color);
     /* align-items: center; */
 }
 
 .menu-title {
     padding-left: 175px;
 }
+
 .menu-container {
     margin: 0;
     padding: 0;
@@ -65,10 +68,17 @@ html {
     padding-top: 100px;
 }
 
+.food-drinks {
+    width: 150px;
+    border: 1px solid green;
+}
+
 .menu-category-list ul li {
+    color: var(--secondary-text-color);
     margin-bottom: 20px;
     font-size: 18px;
     cursor: pointer;
+    border: 1px solid red;
 }
 
 .menu-card-container {
