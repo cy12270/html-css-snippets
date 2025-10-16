@@ -32,16 +32,27 @@ html {
     object-fit: cover;
 }
 
+.menu-card-content {
+    padding: 0px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    justify-content: center;
+    width: 200px;
+    height: 80px;
+}
+
 .menu-card-title {
     margin-left: 0;
-    margin-top: 0;
-    height: 40px;
+    margin-top: 10px;
+    height: 20px;
     font-size: 18px;
     text-align: left;
 }
 
 .menu-card-price {
     margin-left: 0;
+    height: 40px;
     font-size: 18px;
-    color: #333;
+    text-align: left;
 }
