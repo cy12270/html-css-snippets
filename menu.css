@@ -41,13 +41,13 @@ html {
 }
 
 .menu-container {
-    margin: 0;
-    padding: 0;
-    width: 1158px;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+    width: 1161px;
     height: 3500px;
     display: flex;
     align-items: left;
-    border: 1px dashed #ccc;
+    /* border: 1px dashed #ccc; */
 }
 
 .menu-category-list {
@@ -59,7 +59,7 @@ html {
     display: flex;
     flex-direction: row;
     align-items: left;
-    border: 1px solid blue;
+    /* border: 1px solid var(--secondary-text-color); */
 }
 
 .menu-category-list ul {
@@ -70,7 +70,7 @@ html {
 
 .food-drinks {
     width: 150px;
-    border: 1px solid green;
+    border-top: 1px solid var(--secondary-text-color);
 }
 
 .menu-category-list ul li {
@@ -78,7 +78,7 @@ html {
     margin-bottom: 20px;
     font-size: 18px;
     cursor: pointer;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .menu-card-container {
@@ -94,7 +94,7 @@ html {
     justify-content: center;
     padding: 20px;
     background-color: #f8f8f8; */
-    border: 1px solid #333333;
+    /* border: 1px solid #333333; */
 }
 
 .menu-category-title {
