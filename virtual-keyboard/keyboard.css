@@ -76,11 +76,9 @@ body {
 }
 
 #keyboard > .key-row > .key {
+    margin-bottom: 10px;
     width: 110px;
     height: 50px;
-    background-color: var(--button-color);
-    border: none;
-    border-radius: 10px;
 }
 
 /* keyboard grid */
@@ -96,11 +94,6 @@ body {
     width: 50px;
     height: 50px;
     /* remove manual padding so centering can be handled by flexbox */
-    text-align: center;
-    color: var(--primary-text-color);
-    background-color: var(--button-color);
-    border: none;
-    border-radius: 10px;
 }
 
 /* center text/content inside any key */
@@ -108,6 +101,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary-text-color);
+    /* text-align: center; */
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 10px;
 }
 
 /* align the backspace key to the right edge of its parent row/grid */
@@ -116,4 +114,8 @@ body {
     justify-self: end;
     /* for flex or block fallback */
     margin-left: auto;
+}
+
+#next {
+    width: 335px;
 }
