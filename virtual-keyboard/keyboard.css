@@ -95,12 +95,14 @@ body {
 .row > .instruction {
     font-size: 18px;
     margin-left: 0;
+    margin-right: auto;
     text-align: center;
     padding-top: 3px;
     width: 125px;
 }
 
 #word {
+    margin-right: auto;
     height: 50px;
     width: 72px;
     font-size: 29px;
