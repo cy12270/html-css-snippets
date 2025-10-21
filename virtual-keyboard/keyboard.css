@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+
+:root {
+    /* Colors */
+    --background-color: #B5A399;
+    --button-color: #F0EAD8;
+    --primary-text-color: #BC5215;
+    --secondary-text-color: #839BAD;
+    
+    /* Typography */
+    --font-primary: 'Noto Sans JP', sans-serif;
+    --font-secondary: 'Zen Old Mincho', serif;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* line-height: 1.5; */
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* textarea styling */
+#display {
+  flex: 1;
+  margin: 5rem;
+  padding: 1rem;
+  /* font-size: 1.5rem; */
+  border: none;
+  border-radius: 10px;
+  /* outline: none; */
+  resize: none;
+  background-color: #f5f5f5;
+}
+    
+/* keyboard grid */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
