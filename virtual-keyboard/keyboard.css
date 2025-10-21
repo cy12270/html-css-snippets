@@ -95,10 +95,25 @@ body {
 #keyboard-grid > .key {
     width: 50px;
     height: 50px;
-    padding-top: 14px;
+    /* remove manual padding so centering can be handled by flexbox */
     text-align: center;
     color: var(--primary-text-color);
     background-color: var(--button-color);
     border: none;
     border-radius: 10px;
+}
+
+/* center text/content inside any key */
+.key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* align the backspace key to the right edge of its parent row/grid */
+#backspace {
+    /* for grid layout */
+    justify-self: end;
+    /* for flex or block fallback */
+    margin-left: auto;
 }
