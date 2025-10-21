@@ -226,14 +226,14 @@ a:hover {
 
 
 /* /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_
-  Media Queries 切換
+    Media Queries 切換
 /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_*/
 /* 手機版型：481px ～ 768px */
 @media only screen and (min-width: 481px) {
 
 }
 
-/*  平板版型；769px～960px */
+/*    平板版型；769px～960px */
 @media only screen and (min-width: 769px) {
 /*logo*/
 header h1 {
@@ -304,7 +304,7 @@ div#contents section#work article p {
 }
 }
 
-/*  961px～ */
+/*    961px～ */
 @media only screen and (min-width: 961px) {
 /* header */
 header {
@@ -317,7 +317,7 @@ header h1 {
 }
 /* nav */
 nav {
-  max-width: 960px;
+    max-width: 960px;
 }
 nav ul{
 	margin-left:auto;
