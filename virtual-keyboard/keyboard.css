@@ -30,13 +30,18 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  /* line-height: 1.5; */
   background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 412px;
+  height: 917px;
 }
 
 /* textarea styling */
@@ -51,10 +56,24 @@ body {
   resize: none;
   background-color: #f5f5f5;
 }
+
+#keyboard {
+  font-family: var(--font-primary);
+}
     
 /* keyboard grid */
-.keyboard {
+#keyboard-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  gap: 3px;
+}
+
+#keyboard-grid > .key {
+  width: 50px;
+  height: 50px;
+  padding-top: 14px;
+  text-align: center;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
 }
