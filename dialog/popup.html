@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Dialog</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+<h1>Popup</h1>
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptatum labore, voluptate dolorum ut suscipit ipsum temporibus minus quae iste ipsa ducimus voluptates porro libero excepturi, consectetur cum ipsam. Accusamus!
+</p>
+
+<button id="open">Open</button>
+
+<dialog id="myDialog">
+    <h2>Dialog Title</h2>
+    <p>This is the content of the dialog.</p>
+    <button id="closeDialog">Close</button>
+</dialog>
+
+<script>
+    const dialog = document.getElementById('myDialog');
+    const openButton = document.getElementById('open');
+    const closeButton = document.getElementById('closeDialog');
+
+    openButton.addEventListener('click', () => {
+        dialog.showModal();
+    });
+
+    closeButton.addEventListener('click', () => {
+        dialog.close();
+    });
+</script>
+</body>
+</html>
