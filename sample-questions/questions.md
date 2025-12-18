@@ -52,14 +52,14 @@ Sample 2
 Program code.
 
 ```html
-<h1> Head Line A </h1>.
+<h1> Head Line A </h1>
 
-<h1> Head Line B </h1>.
+<h1> Head Line B </h1>
 
-<h1> Head Line C </h1>.
+<h1> Head Line C </h1>
 
-<h1> Head Line D </h1>.
+<h1> Head Line D </h1>
 
-<h1> Head Line E </h1>.
+<h1> Head Line E </h1>
 
 ```
