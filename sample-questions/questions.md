@@ -1,4 +1,5 @@
-Sample 1
+# Sample 1
+
 1. 
 ```html
 <h1>DingDing</h1>
@@ -39,7 +40,7 @@ Original code:
 <p>How do you do!</p>
 ```
 
-Sample 2
+# Sample 2
 
 1. Write the following specific requirements for the webpage using CS5.
 
