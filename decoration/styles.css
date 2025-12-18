@@ -1,0 +1,26 @@
+.container {
+  position: relative; /* Establishes a stacking context for its children */
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.box1 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  z-index: 1; /* Will be behind .box2 */
+}
+
+.box2 {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  z-index: 2; /* Will be on top of .box1 */
+}
