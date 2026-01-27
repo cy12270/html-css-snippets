@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Syntax Tree Diagram</title>
+<style>
+  body {
+    margin: 0;
+    background: #fafafa;
+    font-family: monospace;
+  }
+  canvas {
+    display: block;
+    margin: auto;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="tree" width="800" height="800"></canvas>
+
+<script>
+const canvas = document.getElementById("tree");
+const ctx = canvas.getContext("2d");
+
+ctx.font = "14px monospace";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
+function node(x, y, text) {
+  ctx.fillText(text, x, y);
+}
+
+function line(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1 + 8);
+  ctx.lineTo(x2, y2 - 8);
+  ctx.stroke();
+}
+
+class Node {
+  constructor(x, y, text) {
+    this.x = x;
+    this.y = y;
+    this.text = text;
+    node(x, y, text);
+  }
+
+  connect(childNode) {
+    line(this.x, this.y, childNode.x, childNode.y);
+  }
+}
+
+const X = {
+  CENTER: 200,
+  LEFT: 100,
+  RIGHT: 300
+};
+
+// ─────── Level Y positions ───────
+const Y = {
+  S: 40,
+  NP: 90,
+  VP: 90,
+  LINE: 140
+};
+
+// ─────── Root ───────
+const root = new Node(X.CENTER, Y.S, "S");
+
+// NP Dogs
+const np = new Node(X.LEFT, Y.NP, "NP");
+const dogs = new Node(X.LEFT, Y.LINE, "Dogs");
+// VP
+const vp = new Node(X.RIGHT, Y.VP, "VP");
+const bark = new Node(X.RIGHT, Y.LINE, "bark");
+
+// ─────── Lines ───────
+root.connect(np);
+root.connect(vp);
+np.connect(dogs);
+vp.connect(bark);
+
+</script>
+
+</body>
+</html>
+
