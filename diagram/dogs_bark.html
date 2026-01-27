@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Syntax Tree Diagram</title>
+<style>
+  body {
+    margin: 0;
+    background: #fafafa;
+    font-family: monospace;
+  }
+  canvas {
+    display: block;
+    margin: auto;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="tree" width="800" height="800"></canvas>
+
+<script>
+const canvas = document.getElementById("tree");
+const ctx = canvas.getContext("2d");
+
+ctx.font = "14px monospace";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
+function node(x, y, text) {
+  ctx.fillText(text, x, y);
+}
+
+function line(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1 + 8);
+  ctx.lineTo(x2, y2 - 8);
+  ctx.stroke();
+}
+
+const X = {
+  CENTER: 200,
+  LEFT: 100,
+  RIGHT: 300
+};
+
+// ─────── Level Y positions ───────
+const Y = {
+  S: 40,
+  NP: 90,
+  VP: 90,
+  LINE: 140
+};
+
+// ─────── Root ───────
+node(X.CENTER, Y.S, "S");
+
+// NP Dogs
+node(X.LEFT, Y.NP, "NP");
+node(X.LEFT, Y.LINE, "Dogs");
+// VP
+node(X.RIGHT, Y.VP, "VP");
+node(X.RIGHT, Y.LINE, "bark");
+
+// ─────── Lines ───────
+line(X.CENTER, Y.S, X.LEFT, Y.NP);
+line(X.CENTER, Y.S, X.RIGHT, Y.VP);
+line(X.LEFT, Y.NP, X.LEFT, Y.LINE);
+line(X.RIGHT, Y.VP, X.RIGHT, Y.LINE);
+
+
+</script>
+
+</body>
+</html>
+

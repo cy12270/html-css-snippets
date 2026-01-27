@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Syntax Tree Diagram</title>
+<style>
+  body {
+    margin: 0;
+    background: #fafafa;
+    font-family: monospace;
+  }
+  canvas {
+    display: block;
+    margin: auto;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="tree" width="1400" height="700"></canvas>
+
+<script>
+const canvas = document.getElementById("tree");
+const ctx = canvas.getContext("2d");
+
+ctx.font = "14px monospace";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
+function node(x, y, text) {
+  ctx.fillText(text, x, y);
+}
+
+function line(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1 + 8);
+  ctx.lineTo(x2, y2 - 8);
+  ctx.stroke();
+}
+
+// ─────── Level Y positions ───────
+const Y = {
+  S: 40,
+  NP: 90,
+  VP: 90,
+  L2: 140,
+  L3: 190,
+  L4: 240,
+  L5: 290,
+  L6: 340
+};
+
+// ─────── Root ───────
+node(700, Y.S, "S");
+
+// NP Sam
+node(400, Y.NP, "NP");
+node(400, Y.L2, "NNP");
+node(400, Y.L3, "Sam");
+
+// VP
+node(900, Y.VP, "VP");
+node(800, Y.L2, "VBD");
+node(800, Y.L3, "sunbathed");
+node(1000, Y.L2, "PP");
+
+// PP
+node(950, Y.L3, "IN");
+node(950, Y.L4, "beside");
+node(1050, Y.L3, "NP");
+
+// NP (a stream ...)
+node(1020, Y.L4, "DT");
+node(1020, Y.L5, "a");
+node(1100, Y.L4, "NN");
+node(1100, Y.L5, "stream");
+
+// SBAR
+node(1200, Y.L4, "SBAR");
+node(1160, Y.L5, "WHNP");
+node(1160, Y.L6, "that");
+node(1240, Y.L5, "S");
+
+// Relative VP
+node(1240, Y.L6 + 40, "VP");
+node(1200, Y.L6 + 80, "VBD");
+node(1200, Y.L6 + 120, "had");
+node(1280, Y.L6 + 80, "VP");
+node(1260, Y.L6 + 120, "VBN");
+node(1260, Y.L6 + 160, "dried");
+node(1320, Y.L6 + 120, "PRT");
+node(1320, Y.L6 + 160, "up");
+
+// ─────── Lines ───────
+line(700, Y.S, 400, Y.NP);
+line(700, Y.S, 900, Y.VP);
+
+line(400, Y.NP, 400, Y.L2);
+line(400, Y.L2, 400, Y.L3);
+
+line(900, Y.VP, 800, Y.L2);
+line(900, Y.VP, 1000, Y.L2);
+
+line(800, Y.L2, 800, Y.L3);
+
+line(1000, Y.L2, 950, Y.L3);
+line(1000, Y.L2, 1050, Y.L3);
+
+line(950, Y.L3, 950, Y.L4);
+
+line(1050, Y.L3, 1020, Y.L4);
+line(1050, Y.L3, 1100, Y.L4);
+line(1050, Y.L3, 1200, Y.L4);
+
+line(1020, Y.L4, 1020, Y.L5);
+line(1100, Y.L4, 1100, Y.L5);
+
+line(1200, Y.L4, 1160, Y.L5);
+line(1200, Y.L4, 1240, Y.L5);
+
+line(1160, Y.L5, 1160, Y.L6);
+
+line(1240, Y.L5, 1240, Y.L6 + 40);
+line(1240, Y.L6 + 40, 1200, Y.L6 + 80);
+line(1240, Y.L6 + 40, 1280, Y.L6 + 80);
+
+line(1200, Y.L6 + 80, 1200, Y.L6 + 120);
+
+line(1280, Y.L6 + 80, 1260, Y.L6 + 120);
+line(1280, Y.L6 + 80, 1320, Y.L6 + 120);
+
+line(1260, Y.L6 + 120, 1260, Y.L6 + 160);
+line(1320, Y.L6 + 120, 1320, Y.L6 + 160);
+</script>
+
+</body>
+</html>
+
