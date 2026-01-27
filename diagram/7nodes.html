@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Auto Layout Syntax Tree</title>
+<style>
+  body {
+    margin: 0;
+    background: #fafafa;
+    font-family: monospace;
+  }
+  canvas {
+    display: block;
+    margin: auto;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="tree" width="800" height="400"></canvas>
+
+<script>
+const canvas = document.getElementById("tree");
+const ctx = canvas.getContext("2d");
+
+ctx.font = "14px monospace";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
+function drawNode(x, y, text) {
+  ctx.fillText(text, x, y);
+}
+
+function drawLine(x1, y1, x2, y2) {
+  ctx.beginPath();
+  ctx.moveTo(x1, y1 + 8);
+  ctx.lineTo(x2, y2 - 8);
+  ctx.stroke();
+}
+
+// ───── Tree data structure ─────
+const tree = {
+  label: "S",
+  children: [
+    {
+      label: "NP",
+      children: [
+        { label: "The", children: [] },
+        { label: "cat", children: [] }
+      ]
+    },
+    {
+      label: "VP",
+      children: [
+        { label: "chased", children: [] },
+        { label: "mouse", children: [] }
+      ]
+    }
+  ]
+};
+
+// ───── Layout parameters ─────
+const levelHeight = 70;
+const nodeSpacing = 60;
+
+// Assign x/y positions
+let currentX = 0;
+
+function layout(node, depth = 0) {
+  node.y = 40 + depth * levelHeight;
+
+  if (node.children.length === 0) {
+    node.x = 80 + currentX * nodeSpacing;
+    currentX++;
+  } else {
+    node.children.forEach(child => layout(child, depth + 1));
+    node.x =
+      node.children.reduce((sum, c) => sum + c.x, 0) /
+      node.children.length;
+  }
+}
+
+// Draw tree
+function render(node) {
+  drawNode(node.x, node.y, node.label);
+  node.children.forEach(child => {
+    drawLine(node.x, node.y, child.x, child.y);
+    render(child);
+  });
+}
+
+// ───── Run ─────
+layout(tree);
+render(tree);
+</script>
+
+</body>
+</html>
