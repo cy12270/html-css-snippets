@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1</title>
+</head>
+<body>
+    <h1>DingDing</h1>
+
+    <p>Get your favourite</p>
+
+    <ul>
+
+    <li class="drinks">HotCoffee</li>
+
+    <li class="drinks">Coco Milk</li>
+
+    <li class="drinks">Mango Juice</li>
+
+    <li class="drinks">Apple Juice</li>
+
+    <li class="drinks">Beer</li>
+
+    </ul>
+
+</body>
+
+<script>
+    const dingDing = document.querySelector('h1');
+    dingDing.style.fontSize = '30px';
+    dingDing.style.backgroundColor = 'brown';
+    dingDing.style.color = 'white';
+
+    const items1 = document.querySelectorAll('.drinks');
+    const items2 = document.querySelectorAll('li');
+
+    console.log('list items:');
+    items1.forEach(items1 => console.log(items1.textContent));
+    items2.forEach(items2 => console.log(items2.textContent));
+
+    const areEqual = (arr1, arr2) => arr1.length === arr2.length 
+        && arr1.every((value, index) => value === arr2[index]);
+
+    if (areEqual) console.log('arrays are equal');
+</script>
+</html>

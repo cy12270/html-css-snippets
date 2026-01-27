@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+</head>
+<body>
+    <h1> Head Line A </h1>
+
+    <h1> Head Line B </h1>
+
+    <h1> Head Line C </h1>
+
+    <h1> Head Line D </h1>
+
+    <h1> Head Line E </h1>
+
+    <button onclick="chgBgColor()">change background</button>
+
+    <script>
+        const h1 = document.getElementsByTagName('h1');
+
+        const chgBgColor = () => {
+            for (let element of h1) {
+                element.style.backgroundColor = 'red';
+            };
+        }
+    </script>
+</body>
+</html>
